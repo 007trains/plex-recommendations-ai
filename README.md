@@ -37,7 +37,7 @@ Use this example below:
 version: "2.1"
 services:
   plex-recommendations:
-    image: silkychap/plex-recommendations-ai:latest
+    image: 007trains/plex-recommendations-ai:latest
     container_name: plex-recommendations
     environment:
       - PLEX_URL=<local plex url>
