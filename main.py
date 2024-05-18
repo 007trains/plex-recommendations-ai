@@ -94,7 +94,7 @@ def run():
 
             # create a chat completion
             logging.info("Querying openai for recommendations...")
-            chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": query}])
+            chat_completion = openai.ChatCompletion.create(model="gpt-4o", messages=[{"role": "user", "content": query}])
             ai_result = chat_completion.choices[0].message.content
             ai_result_split = ai_result.split("+++")
             ai_movie_recommendations = ai_result_split[0]
