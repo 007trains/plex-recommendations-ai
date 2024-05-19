@@ -43,12 +43,13 @@ services:
       - PLEX_URL=<local plex url>
       - PLEX_TOKEN=<plex token>
       - OPEN_AI_KEY=<open ai key>
+      - OPEN_AI_VERSION=<open ai version>
       - LIBRARY_NAME=<library name>
       - COLLECTION_TITLE=<title>
       - HISTORY_AMOUNT=<amount> # How far it will look into your plex watch history
       - RECOMMENDED_AMOUNT=<amount> # How many recommendations it will request
       - MINIMUM_AMOUNT=<amount> # The minimum amount of matches it will need to create the collection
-      - SECONDS_TO_WAIT=<amount> # How long in seconds it will wait to call again (default: 86400)
+      - SECONDS_TO_WAIT=<amount> # How long in seconds it will wait to call again (default: 432000)
     restart: unless-stopped
 ```
 
