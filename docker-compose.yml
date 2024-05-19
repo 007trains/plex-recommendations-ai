@@ -7,6 +7,7 @@ services:
       - PLEX_URL=<local plex url>
       - PLEX_TOKEN=<plex token>
       - OPEN_AI_KEY=<open ai key>
+      - OPEN_AI_VERSION=<open ai version>
       - LIBRARY_NAME=<library name>
       - COLLECTION_TITLE=<title>
       - HISTORY_AMOUNT=<amount>
