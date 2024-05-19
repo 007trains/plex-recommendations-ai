@@ -9,12 +9,13 @@ userInputs = UserInputs(
     plex_url=os.getenv("PLEX_URL"),
     plex_token=os.getenv("PLEX_TOKEN"),
     openai_key=os.getenv("OPEN_AI_KEY"),
+    openai_version=os.getenv("OPEN_AI_VERSION"),
     library_name=os.getenv("LIBRARY_NAME"),
     collection_title=os.getenv("COLLECTION_TITLE"),
     history_amount=int(os.getenv("HISTORY_AMOUNT")),
     recommended_amount=int(os.getenv("RECOMMENDED_AMOUNT")),
     minimum_amount=int(os.getenv("MINIMUM_AMOUNT")),
-    wait_seconds=int(os.getenv("SECONDS_TO_WAIT", 86400)),
+    wait_seconds=int(os.getenv("SECONDS_TO_WAIT", 432000)),
 )
 
 logger = logging.getLogger()
@@ -94,7 +95,7 @@ def run():
 
             # create a chat completion
             logging.info("Querying openai for recommendations...")
-            chat_completion = openai.ChatCompletion.create(model="gpt-4o", messages=[{"role": "user", "content": query}])
+            chat_completion = openai.ChatCompletion.create(model=openai_version, messages=[{"role": "user", "content": query}])
             ai_result = chat_completion.choices[0].message.content
             ai_result_split = ai_result.split("+++")
             ai_movie_recommendations = ai_result_split[0]
